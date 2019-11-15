@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+<br>
+<script>
+    function checkCharacter() {
+        let count = 0;
+        let inputString = prompt('In put a String: ');
+        let inputCharacter = prompt('Input a Character');
+        while (inputCharacter.length>1){
+            alert('Just input 1 character only');
+            inputCharacter = prompt('Input a Character');
+        }
+        for (let i = 0; i < inputString.length; i++) {
+            if (inputString[i]==inputCharacter){
+                count+=1;
+            }
+        }
+        if (count!=0) return document.write(inputCharacter+ ' appears '+count+' times');
+        else return document.write('-1');
+    }
+    checkCharacter();
+</script>
+</body>
+</html>

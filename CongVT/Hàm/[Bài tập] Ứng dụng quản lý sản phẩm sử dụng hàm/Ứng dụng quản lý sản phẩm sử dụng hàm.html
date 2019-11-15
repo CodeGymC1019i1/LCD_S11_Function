@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+
+<div id="listProduct"></div>
+
+<script>
+    let listProduct = ['Apple iPhone 8 Plus', 'XiaoMi 8', 'Apple iPhone XS Max', 'Apple iPhone 11 Pro Max'];
+
+    // Draw Product Table with function buttons
+    function drawProductTable() {
+        let table = "<form> <div  id='divAction'> <form  id='addNewForm'> <h3>Add New Product</h3> " +
+            "<input type='text' id='newProductInput' placeholder='New Product'>  " +
+            "<input type='button' id='addNewProductbutton' onclick='addNewProduct()' value='Add'>" +
+            " </form> <form  id='listProductForm'> <h3>Display All Product</h3> <h5>Product Name </h5> </form> </div> </form>";
+        for (let i = 0; i < listProduct.length; i++) {
+            // table += "<form id='product" + i + "'> <p id='" + i + "' >" + listProduct[i] + "</p><button id='editButton" + i + "' value='Edit' class='editButton' onclick='showEditForm(this.id)'>Edit</button> <div onclick='editProductDiv()' id='editProduct"+i+"' style='display:none;height: 50px; width: 100%;'>sdsdsdsd</div>  <input type='button' id='delete" + i + "' onclick='deleteProduct(this.id)' value='Delete' class='deleteButton'>   </form> "
+            table += `<form id="product${i}"> <p id="${i}" >${listProduct[i]}</p>
+                        <button id="editButton${i}" value="Edit" type="button" class="editButton" onclick="showEditForm(${i})">Edit</button>
+                        <div  id="editProduct${i}" style="display:none;height: 50px; width: 100%;">
+                        <input type="text" id="editProductHere" value="">
+                        <button type="button" id="${i}" value="Save" onclick="saveEditProduct(this.id)">
+                        </div> <input type="button" id="delete${i}" onclick="deleteProduct(this.id)" value="Delete" class="deleteButton">
+                        </form>`;
+
+        }
+        document.getElementById('listProduct').innerHTML = table;
+    }
+
+    //Function that  "Delete Product button"
+
+    function deleteProduct(id) {
+        //let idOfProduct = parseInt(product.slice(5));
+        let result = confirm('Do you want to delete this Product from table? ');
+        if (result) listProduct.splice(id, 1);
+        drawProductTable();
+    }
+
+    //Function that show hidden edit div
+    function showEditForm(id) {
+        document.getElementById("editProduct" + id).style.display = "block";
+        document.getElementById("editProductHere").value = listProduct[id];
+    }
+
+    function saveEditProduct(id) {
+        listProduct[id] = document.getElementById("editProductHere").value;
+        document.getElementById("editProduct" + id).style.display = "none";
+        console.log(listProduct);
+        drawProductTable();
+    }
+
+    //function add new product
+    function addNewProduct() {
+        let productName = document.getElementById('newProductInput').value;
+        (productName === "") ? alert('You cannot add empty product name') : listProduct.push(productName);
+        drawProductTable()
+    }
+
+    drawProductTable();
+
+
+</script>
+
+</body>
+</html>

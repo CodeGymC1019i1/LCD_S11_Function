@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome() {
+        let s ='10101';
+        if (s.length==0){ return 1}
+        let trueFalse = (s[0]===s[s.length-1])? 1:0;
+        s = s.slice(1,s.length-2);
+       return trueFalse*isPalindrome(s);
+    }
+    console.log(isPalindrome());
+</script>
+</body>
+</html>

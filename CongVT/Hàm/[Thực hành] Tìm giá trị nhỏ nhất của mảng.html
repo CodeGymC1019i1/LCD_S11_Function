@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tìm giá trị nhỏ nhất của mảng
+    </title>
+</head>
+<body>
+<!--
+Xây dựng hàm nhận vào một tham số là một mảng cho trước.
+Hàm thực hiện tìm giá trị nhỏ nhất trong mảng và trả về giá trị đó.
+Sử dụng hàm vừa xây dựng trên với mảng như sau:
+-->
+<script>
+    function inputNewArray() {
+        let n = parseInt(prompt('Input length of array'));
+        while (n<0) {
+            alert('Length of a array must greater or equal to zero');
+            n = parseInt(prompt('Input length of array'));
+        }
+        let array = new Array();
+
+        for (let i = 0; i < n; i++) {
+            array[i] = parseInt(prompt('Input element '+i+' of Array'));
+            while (isNaN(array[i])){
+                alert('You must input a number');
+                array[i] = parseInt(prompt('Input element '+i+' of Array'));
+            }
+        }
+        return array;
+    }
+
+
+    function findMinElement(array){
+        array = inputNewArray();
+        if (array.length == 0)
+            return -1;
+        let minOfArray = array[0];
+        let indexOfMin = 0;
+        for (let i = 1; i < array.length; i++) {
+            if (array[i]<minOfArray){
+                minOfArray = array[i];
+                indexOfMin = i;
+            }
+        }
+        //document.write('Min value of the array is:'+ minOfArray+', is at '+indexOfMin+'');
+        return 'Min value of the array is:'+ minOfArray+', is at '+indexOfMin+'';
+    }
+    let result = findMinElement();
+    document.write(result);
+</script>
+</body>
+</html>

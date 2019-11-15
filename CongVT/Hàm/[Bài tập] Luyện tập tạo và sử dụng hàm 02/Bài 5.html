@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+<br><br><br><br><br>
+
+<script>
+    function minOfThree(a, b, c) {
+        a = prompt('Input a');
+        b = prompt('Input b');
+        c = prompt('Input c');
+        let min = a;
+        if (b < min) {
+            min = b;
+        }
+        if (c < min) {
+            min = c;
+        }
+        return min;
+    }
+
+    alert(minOfThree());
+</script>
+
+</body>
+</html>
