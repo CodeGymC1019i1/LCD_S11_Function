@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    function reverseArray(n) {
+        let arr=[]
+        if(n<=0) return false;
+        else
+        for(i=0;i<n;i++){
+            arr[i]=parseInt(prompt('Phần tử thứ'+i));
+        }
+        document.write(arr.reverse());
+    }
+    reverseArray(10)
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    function tinhGiaiThua(n) {
+        let result=1;
+        if(n<1) alert('Không có giai thừa cho số này');
+        if (n>1){
+            for (i=1;i<=n;i++){
+                result*=i
+            }
+            return result;
+        }
+
+    }
+    let giaithua=tinhGiaiThua(5);
+    document.write('giai thừa của 5 là'+giaithua)
+</script>
+</body>
+</html>

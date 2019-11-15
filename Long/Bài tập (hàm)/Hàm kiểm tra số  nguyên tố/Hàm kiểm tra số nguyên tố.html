@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function kiem_tra_snt(N){
+        if (N<2) return false;
+        if (N==2) return true;
+        if (N>2){
+            for (i=2;i<N;i++){
+                if (N%i==0)
+                    return false}
+            return true;
+    }
+    }
+        function hien_thi_cac_so_nho_hon_1000() {
+        for(j=1;j<1000;j++)
+            if(kiem_tra_snt(j)==true) document.write(j)
+        }
+        function main() {
+        hien_thi_cac_so_nho_hon_1000();
+        }
+        main()
+</script>
+</body>
+</html>

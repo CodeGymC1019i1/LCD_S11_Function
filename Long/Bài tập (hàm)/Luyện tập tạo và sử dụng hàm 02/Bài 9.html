@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    let char=prompt('Phần tử cần tìm kiếm trong mảng');
+    function inputArray(n,char) {
+        let arr=[];
+        count=0;
+        if(n<=0) return false;
+        else for(i=0;i<n;i++){
+            arr[i]=prompt('Phần tử thứ'+i)
+            if (arr[i]===char) {count++};
+        }
+        if(count==0) count=-1;
+        document.write('Số lần xuất hiện của phần tử'+char+'là'+count)
+    }
+    inputArray(8,char)
+</script>
+</body>
+</html>
