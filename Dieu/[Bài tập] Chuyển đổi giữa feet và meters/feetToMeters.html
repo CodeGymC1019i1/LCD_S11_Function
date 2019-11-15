@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi feet to meters</title>
+</head>
+<body>
+    <span>feet</span>
+    <input type="number" id="inputFoot" placeholder="foot" oninput="footToMeters(this.value)" onchange="footToMeters(this.value)">
+    <span> -  </span>
+    <input type="number" id="inputMeters" placeholder="meters" oninput="metersToFoot(this.value)" onchange="metersToFoot(this.value)">
+    <span>Meters</span>
+    <script>
+        function footToMeters(f) {
+            let valueF = parseFloat(f);
+            document.getElementById("inputMeters").value =  0.305*valueF;
+        }
+        function metersToFoot(m) {
+            let valueM = parseFloat(m)
+            document.getElementById("inputFoot").value = 3.279*valueM;
+            
+        }
+    </script>
+</body>
+</html>

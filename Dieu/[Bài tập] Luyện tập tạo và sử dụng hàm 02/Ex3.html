@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <input type="number" id="inputNumber" placeholder="number" oninput="factorial(this.value)" onchange="factorial(this.value)">
+    <br/>
+    Giai thua: <span id ="result"> </span>
+    <script>
+        function factorial(n) {
+            let totals = 1;
+                for (let i = 1; i <= n; i++) {
+                    totals *= i;
+                }
+                document.getElementById("result").innerHTML = totals;
+        }
+    </script>
+</body>
+</html>

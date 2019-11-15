@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        function displayOrAdd(a,b) {
+            if ( a > b)
+                return ""+a+" lon hon "+b+"";
+            else
+                return "tong hai so la "+(a+b)+" ";
+        }
+        function main() {
+            let a = parseFloat(prompt("Moi nhap so thu 1 "));
+            let b = parseFloat(prompt("Moi nhap so thu 2 "));
+            let messengers = displayOrAdd(a,b);
+            alert(messengers);
+
+        }
+        main();
+    </script>
+</body>
+</html>

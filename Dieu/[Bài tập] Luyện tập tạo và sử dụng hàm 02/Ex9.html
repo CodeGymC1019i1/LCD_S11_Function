@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 9</title>
+</head>
+<body>
+    <script>
+        function isInt(n) {
+            if(parseInt(n)==n)
+                return true;
+            return false;
+        }
+
+        function inputInteger() {
+            let n;
+            do {
+                n = prompt("Moi nhap so nguyen");
+            } while(!isInt(n));
+            return n;
+        }
+        function inputArray() {
+            let arr = [];
+            let N;
+            alert("Nhap do dai mang: ");
+            do {
+                N = inputInteger();
+            } while(N<=0);
+            alert("Nhap cac phan tu cua mang: ");
+            for (let i = 0; i < N; i++) {
+                arr[i] = prompt("Nhap cac ky tu phan tu cua mang");
+            }
+            return arr;
+        }
+        function checkInclude(x, array) {
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (x == array[i])
+                    count++;
+            }
+            if (count == 0)
+                count = -1;
+            return count;
+        }
+        function main() {
+            let arr = inputArray();
+            let x = prompt("Moi nhap ky tu muon kiem tra ");
+            let count = checkInclude(x, arr);
+            if (count == -1)
+                alert(x+ " khong ton tai trong mang" );
+            else
+                alert(x+ " xuat hien " +count+ " lan trong mang");
+        }
+        main();
+
+    </script>
+</body>
+</html>

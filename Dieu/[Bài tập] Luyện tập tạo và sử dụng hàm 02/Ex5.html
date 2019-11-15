@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+    <script>
+        function isInt(num) {
+            if(parseInt(num)==num)
+                return true;
+            return false;
+        }
+        function inputInteger() {
+            let n;
+            do {
+                n = prompt("Moi nhap so nguyen");
+            } while(!isInt(n));
+            return n;
+        }
+        function findMin(a,b,c) {
+                if (a < b && a< c)
+                    return a;
+                else if ( b < c)
+                    return  b;
+                else
+                    return c;
+
+        }
+        function main() {
+            let a = inputInteger();
+            let b = inputInteger();
+            let c = inputInteger();
+            let min = findMin(a,b,c);
+            alert("so nho nhat la: "+min);
+        }
+        main();
+    </script>
+</body>
+</html>

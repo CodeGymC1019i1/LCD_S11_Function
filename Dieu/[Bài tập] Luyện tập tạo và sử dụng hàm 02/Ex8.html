@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 8</title>
+</head>
+<body>
+    <script>
+        function isInt(n) {
+            if(parseInt(n)==n)
+                return true;
+            return false;
+        }
+
+        function inputInteger() {
+            let n;
+            do {
+                n = prompt("Moi nhap so nguyen");
+            } while(!isInt(n));
+            return n;
+        }
+        function inputArray() {
+            let arr = [];
+            let N;
+            alert("Nhap do dai mang: ");
+            do {
+                N = inputInteger();
+            } while(N<=0);
+            alert("Nhap cac phan tu cua mang: ");
+            for (let i = 0; i < N; i++) {
+                arr[i] = inputInteger();
+            }
+            return arr;
+
+        }
+        function reverseArray(array) {
+            return array.reverse();
+        }
+        function main() {
+            let arr = inputArray();
+            let reverseArr = reverseArray(arr);
+            document.write("Mang dao nguoc la: "+arr.toString());
+        }
+        main();
+    </script>
+</body>
+</html>

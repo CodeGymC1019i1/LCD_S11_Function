@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+    <script>
+        function isInt(n) {
+            if(parseInt(n)==n)
+                return true;
+            return false;
+        }
+
+        function inputInteger() {
+            let n;
+            do {
+                n = prompt("Moi nhap so nguyen");
+            } while(!isInt(n));
+            return n;
+        }
+        function change(a,b){
+            let x = a;
+            a = b;
+            b = x;
+            alert("thu tu dao nguoc hai so vua nhap la "+a+" "+b);
+        }
+        function main() {
+            let a = inputInteger();
+            let b = inputInteger();
+            change(a,b);
+        }
+        main();
+    </script>
+</body>
+</html>

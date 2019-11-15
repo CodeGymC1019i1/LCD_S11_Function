@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+    Radius:
+    <input type="number" id="inputRadius" placeholder="radius" oninput="areaCircle(this.value) ; circumference(this.value)"
+           onchange="areaCircle(this.value); circumference(this.value)">
+    <br/>
+    Area: <span id ="area"> </span>
+    <br/>
+    circumference: <span id = "circum"></span>
+    <script>
+        function areaCircle(radius) {
+            console.log(typeof(radius))
+            document.getElementById("area").innerText = 3.14*radius*radius;
+
+        }
+        function circumference(radius) {
+            document.getElementById("circum").innerText = 2*3.14*radius;
+
+        }
+    </script>
+</body>
+</html>
