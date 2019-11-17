@@ -19,16 +19,17 @@
             } while(!isInt(n));
             return n;
         }
-        function change(a,b){
-            let x = a;
-            a = b;
-            b = x;
-            alert("thu tu dao nguoc hai so vua nhap la "+a+" "+b);
+        function change(array){
+            let temp = array[0];
+            array[0] = array[1];
+            array[1] = temp;
         }
         function main() {
             let a = inputInteger();
             let b = inputInteger();
-            change(a,b);
+            let arr = [a,b];
+            change(arr);
+            document.write(arr);
         }
         main();
     </script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tu doi xung</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str) {
+            if (str.length < 1)
+                return true;
+            else if (str[0] != str[str.length-1])
+                return false;
+            else
+                return isPalindrome(str.substr(1,str.length-2));
+        }
+        function main() {
+            let str = prompt("moi nhap mot chuoi ");
+            if(isPalindrome(str))
+                alert(str+ " doi xung");
+            else
+                alert(str+" khong doi xung");
+        }
+        main();
+
+    </script>
+</body>
+</html>

@@ -5,17 +5,25 @@
     <title>Bai 3</title>
 </head>
 <body>
-    <input type="number" id="inputNumber" placeholder="number" oninput="factorial(this.value)" onchange="factorial(this.value)">
-    <br/>
-    Giai thua: <span id ="result"> </span>
     <script>
         function factorial(n) {
             let totals = 1;
-                for (let i = 1; i <= n; i++) {
-                    totals *= i;
-                }
-                document.getElementById("result").innerHTML = totals;
+            for (let i = 1; i <= n; i++) {
+                totals *= i;
+            }
+            return  totals;
         }
+
+        // function factorial(n) {
+        //     let totals =1;
+        //     if (n==0)
+        //         totals =  1;
+        //     else
+        //         totals = n * factorial(n-1);
+        //     return totals;
+        // }
+
+        alert(factorial(5));
     </script>
 </body>
 </html>

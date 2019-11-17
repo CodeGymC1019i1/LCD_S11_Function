@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quan Ly San Pham</title>
+    <style>
+        table, td, th {
+            border-collapse: collapse;
+            border: none;
+            font-size: 20px;
+
+        }
+        th {
+            width: 350px;
+            text-align: left;
+        }
+        td {
+            width: 50px;
+        }
+
+        tr:nth-child(even) {
+            background-color: turquoise;
+        }
+        input {
+            font-size: 20px;
+            text-align: left;
+            border: none;
+            background: none;
+
+        }
+        button {
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: #ff7974 ;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+    <h3>Add New Product</h3>
+    <input type="text" id = "inputProduct" style="border: 1px solid black">
+    <button type="button" id="addProduct" value = "add" onclick="addProductToList(); ">Add</button>
+
+    </div>
+    <br/>
+    <h3>Display All Product</h3>
+    <br/>
+    <div id = "displayAll"></div>
+
+    <script>
+        let list = [];
+        let turn = true;
+        function addProductToList() {
+            n = document.getElementById("inputProduct").value;
+            list.push(n);
+            document.getElementById("inputProduct").value = "";
+            displayList();
+        }
+
+        function displayList() {
+            let e = "";
+            e+= "<table>";
+            e += "<td>STT</td><th>Product Name</th><td></td><td></td><td>"+list.length+" <b>products</b></td>";
+            for (let i = 0; i < list.length; i++) {
+                e += `<tr> <td>${(i+1)}</td> <th>  <input type = "text"  value = "${list[i]}" id = "showList${i}" disabled ></th>
+                 <td><button type="button" value="edit" id ="edit${i}" onclick="editProduct(${i})">edit</button></td>
+                <td><button type="button" value="delete" id ="delete${i}" onclick="deleteProduct(${i})">delete</button></td>
+                <td></td>
+                </tr>`;
+            }
+            e+= "</table>";
+            document.getElementById("displayAll").innerHTML = e;
+        }
+        function deleteProduct(i) {
+            list.splice(i,1);
+            displayList();
+        }
+        function editProduct(i) {
+            if (turn ) {
+                for (let j = 0; j < list.length; j++) {
+                    if (j !== i)
+                        document.getElementById("edit" + j).disabled = true;
+                        document.getElementById("delete" + j).disabled = true;
+
+                }
+                    document.getElementById("showList" + i).disabled = false;
+                    turn = false;
+
+                } else {
+                list[i] = document.getElementById("showList" + i).value;
+                turn = true;
+                displayList()
+            }
+
+        }
+
+    </script>
+</body>
+</html>
